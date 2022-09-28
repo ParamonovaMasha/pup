@@ -40,7 +40,9 @@ body {
         height: 60%;
         background: var(--pup);
         clip-path: ellipse(25% 40% at 45% 47%);
-        top: -20%;
+        top: -30%;
+        transition: 0.25s linear;
+        transform-origin: bottom;
     }
 }
 
@@ -203,10 +205,12 @@ body {
 }
 
 .ear.left {
+    left: 15%;
+
     transform: rotate(-40deg);
 }
 .ear.right {
-    right: -5%;
+    right: 10%;
     transform: rotate(40deg);
 }
 
@@ -249,6 +253,7 @@ body {
         z-index: -4;
         transform-origin: top;
         animation: 0.5s wave linear infinite;
+        transition: 1s;
     }
 }
 
@@ -258,10 +263,10 @@ body {
     }
 
     25% {
-        rotate: (30deg);
+        rotate: (20deg);
     }
     50% {
-        rotate: (20deg);
+        rotate: (30deg);
     }
     75% {
         rotate: (10deg);
@@ -299,4 +304,22 @@ body {
     right: 5%;
     rotate: -30deg;
 }
+
+.puppy:hover .ear.left {
+    rotate: 30deg;
+}
+.puppy:hover .ear.right {
+    rotate: -30deg;
+}
+
+.puppy:hover .mouth::before {
+    animation: none;
+    top: -20%;
+    transition: 0.5s;
+}
+
+.puppy:hover .tale {
+    transform: rotateX(50deg);
+}
+
 
